@@ -100,7 +100,7 @@ class Game(Resource):
 		args = parser.parse_args(strict=True)
 		if is_valid_board(args['board']):
 			board_array = list(args['board'])
-			return {'next_play': optimal_play(board_array)}
+			return optimal_play(board_array)
 		else:
 			return 'Not a valid board', 400	
 
